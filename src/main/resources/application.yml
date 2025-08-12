@@ -1,0 +1,26 @@
+server:
+  port: 8085
+
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@localhost:15021:XE
+    username: DEVELOPER_01
+    password: ORCL1234
+    driver-class-name: oracle.jdbc.OracleDriver
+
+  jpa:
+    hibernate:
+      ddl-auto: none # valida la estructura de la BD con las entidades
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.OracleDialect
+        format_sql: true
+        default_schema: DEVELOPER_01
+  logging:
+    level:
+      org.hibernate.SQL: DEBUG
+      org.hibernate.type.descriptor.sql: TRACE
+
+  main:
+    allow-bean-definition-overriding: true
